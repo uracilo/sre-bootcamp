@@ -1,7 +1,7 @@
 # These functions need to be implemented
 import os
 
-class config:
+class Config:
     # Database
 
     DATABASE_URI=['DATABASE_URI']

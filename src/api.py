@@ -6,6 +6,8 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
+from methods import Token, Restricted, Config
+
 
 app = Flask(__name__)
 
@@ -47,4 +49,4 @@ def protected():
 
 
 if __name__ == "__main__":
-    app.run()
+        app.run(debug=Config.FLASK_DEBUG, host='0.0.0.0', port=8000)
