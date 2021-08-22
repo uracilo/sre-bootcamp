@@ -1,6 +1,11 @@
 FROM python:3
 COPY /. /app
 WORKDIR /app
+
+ARG FLASK_ENV="production"
+RUN export $(grep -v '^#' .env.dev | xargs)
+RUN echo $FLASK_ENV
+
 RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["api.py"]
+ENTRYPOINT ["python","-m","flask"]
+CMD ["run"]
